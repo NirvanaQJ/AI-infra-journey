@@ -1,0 +1,8 @@
+*.o
+*.out
+*.a
+*.so
+build/
+.vscode/
+*.log
+__pycache__/
