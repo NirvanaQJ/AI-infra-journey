@@ -1,0 +1,928 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 集群互连方向 · 32 周逐日学习计划（2026.09.21 – 2027.05.02）</title>
+<style>
+:root{--bg:#0e1117;--card:#161b25;--card2:#1c2230;--card3:#202836;--line:#2a3242;--tx:#e6edf3;--tx2:#9aa7b8;--tx3:#6b7a8f;
+--gold:#f0b429;--cyan:#38bdf8;--green:#34d399;--red:#f87171;--purple:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:40px 24px 90px}
+header{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:26px}
+h1{font-size:26px;font-weight:700;letter-spacing:-.4px;line-height:1.42}
+.sub{color:var(--tx2);font-size:13.5px;margin-top:9px}
+.pbar{margin:20px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 17px;
+ display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:9;backdrop-filter:blur(8px)}
+.pbar .tr{flex:1;height:8px;background:#232b39;border-radius:5px;overflow:hidden}
+.pbar .fi{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold),var(--cyan),var(--green));border-radius:5px;transition:width .3s}
+.pbar .tx{font-size:13px;color:var(--tx2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pbar b{color:#fff;font-size:15px}
+nav{margin:14px 0 30px;display:flex;flex-wrap:wrap;gap:8px}
+.nv{border:1px solid;border-radius:8px;padding:5px 12px;font-size:12.5px;text-decoration:none;background:var(--card)}
+.nv:hover{background:var(--card2)}
+.tpl{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 11px 11px 0;padding:15px 19px;margin:16px 0}
+.tpl .t{font-weight:700;font-size:14.5px;color:var(--gold);margin-bottom:7px}
+.tpl p{font-size:13.5px;color:var(--tx2);margin:4px 0}
+.tpl b{color:#fff}
+.ph{margin:44px 0}
+.ph-h{display:flex;align-items:center;gap:15px;padding:16px 20px;border-radius:12px}
+.ph-id{font-size:19px;font-weight:800;letter-spacing:-.5px}
+.ph-n{font-size:18px;font-weight:700;color:#fff}
+.ph-r{font-size:12.5px;color:var(--tx2);margin-top:2px}
+.ph-p{margin-left:auto;font-size:15px;font-weight:700;color:var(--tx2);font-variant-numeric:tabular-nums}
+.ph-goal,.ph-why{font-size:14px;color:#cfd8e3;margin:13px 0 0;padding:11px 16px;background:var(--card);border-radius:9px}
+.ph-goal b,.ph-why b{color:#fff}
+.ph-why{background:rgba(56,189,248,.05);color:var(--tx2);font-size:13.5px}
+.wk{background:var(--card);border:1px solid var(--line);border-radius:13px;margin:18px 0;overflow:hidden}
+.wk-h{display:flex;align-items:center;gap:11px;padding:12px 17px;background:var(--card2);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.wk-n{font-size:14.5px;font-weight:750;color:#fff}
+.wk-d{font-size:12.5px;color:var(--gold);font-variant-numeric:tabular-nums}
+.wk-t{font-size:14px;font-weight:600;color:var(--cyan);flex:1;min-width:200px}
+.wk-p{font-size:12.5px;color:var(--tx3);font-variant-numeric:tabular-nums}
+.wk-out{padding:10px 17px;font-size:13px;color:var(--tx2);background:rgba(240,180,41,.05);border-bottom:1px solid var(--line)}
+table.wt{width:100%;border-collapse:collapse;font-size:13.5px}
+table.wt td{padding:9px 13px;border-bottom:1px solid rgba(42,50,66,.5);vertical-align:top}
+table.wt tr:last-child td{border-bottom:none}
+td.dd{width:74px;white-space:nowrap;border-right:1px solid var(--line);background:rgba(0,0,0,.15)}
+.wd{display:block;font-size:13px;font-weight:650;color:#e6edf3}
+.dt{display:block;font-size:11.5px;color:var(--tx3);font-variant-numeric:tabular-nums}
+tr.longday{background:rgba(52,211,153,.05)}
+tr.longday .wd{color:var(--green)}
+tr.reviewday{background:rgba(167,139,250,.06)}
+tr.reviewday .wd{color:var(--purple)}
+td.tt ul{list-style:none;margin:0;padding:0}
+td.tt li{padding:2px 0 2px 22px;position:relative;color:#cfd8e3;font-size:13.5px;line-height:1.65}
+td.tt li label{cursor:pointer;display:block}
+td.tt input.ck{position:absolute;left:0;top:6px;width:14px;height:14px;accent-color:var(--green);cursor:pointer}
+td.tt input.ck:checked + span{text-decoration:line-through;color:var(--tx3)}
+.chk{margin:20px 0 0;background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.25);border-radius:11px;padding:15px 19px}
+.chk-t{font-weight:700;font-size:14.5px;color:var(--green);margin-bottom:8px}
+.chk ul{list-style:none;margin:0;padding:0}
+.chk li{position:relative;padding-left:20px;margin:7px 0;font-size:13.5px;color:#cfd8e3}
+.chk li:before{content:"☐";position:absolute;left:0;color:var(--green)}
+h2{font-size:20px;margin:52px 0 15px;font-weight:650;letter-spacing:-.2px}
+.lt{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:14px 0}
+.lt-n{font-weight:700;font-size:15px;color:#fff;margin-bottom:8px}
+.lt ul{list-style:none;margin:0;padding:0}
+.lt li{position:relative;padding-left:18px;margin:7px 0;font-size:13.5px;color:#cfd8e3}
+.lt li:before{content:"";position:absolute;left:3px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+table.rk,table.rs{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:11px;overflow:hidden}
+table.rk th,table.rs th{background:var(--card2);color:var(--tx2);font-size:12.5px;text-align:left;padding:10px 14px;font-weight:600}
+table.rk td,table.rs td{padding:11px 14px;border-bottom:1px solid rgba(42,50,66,.55);color:#c8d3e0;vertical-align:top}
+table.rk td.rk{color:var(--red);font-weight:650;white-space:nowrap;width:150px}
+table.rs td.rn{color:var(--cyan);font-weight:650;white-space:nowrap;width:120px}
+.foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);color:var(--tx3);font-size:12.5px}
+.foot p{font-size:12.5px;color:var(--tx3);margin:6px 0}
+@media(max-width:760px){.wrap{padding:26px 13px 60px}h1{font-size:20px}td.dd{width:56px}
+.wk-t{min-width:100%}table.wt{font-size:12.5px}}
+@media print{body{background:#fff;color:#000}.pbar,nav{display:none}.wk,.ph-h,.chk,table.rs,table.rk,.lt{background:#fff;border-color:#ccc}
+.wk-h,.wk-out{background:#f5f5f5}td.dd{background:#fafafa}input.ck{border:1px solid #999}}
+</style></head><body><div class="wrap">
+
+<header>
+<h1>AI 集群互连 / 高性能网络 · 32 周逐日学习计划</h1>
+<div class="sub">2026.09.21（周一）– 2027.05.02（周日）· 面向北航国新院通信工程两年制硕士 · 目标：2027 暑期实习 offer 与最终薪资最大化</div>
+</header>
+
+<div class="pbar">
+<div style="font-size:13px;color:var(--tx2)">总进度</div>
+<div class="tr"><div class="fi" id="fi"></div></div>
+<div class="tx"><b id="pn">0</b> / 315 项 · <span id="pp">0%</span></div>
+</div>
+
+<nav><a href="#P0" class="nv" style="border-color:#f87171;color:#f87171">P0 系统与编程基础重建</a><a href="#P1" class="nv" style="border-color:#f0b429;color:#f0b429">P1 计算机网络 · 数据中心网络 · RDMA</a><a href="#P2" class="nv" style="border-color:#38bdf8;color:#38bdf8">P2 集合通信 · GPU · 差异化项目</a><a href="#P3" class="nv" style="border-color:#34d399;color:#34d399">P3 实习投递季 · 面试冲刺</a><a href="#later" class="nv" style="border-color:#6b7a8f;color:#9aa7b8">后续 P4–P6</a></nav>
+
+<div class="tpl">
+<div class="t">⏱ 每周时间模板（先接受这个现实，再谈计划）</div>
+<p><b>周一至周五</b>：每晚 19:30 – 23:00（3.5h），外加白天碎片 0.5h。研一有课有组会，工作日不要贪多，<b>稳定比强度重要</b>。</p>
+<p><b>周六</b>：全天 6–8h，安排最难、最需要连续时间的任务（标为 <span style="color:var(--green)">长日</span>）。</p>
+<p><b>周日</b>：4h 复盘 + 输出（写博客 / 整理笔记 / 自测）。标为 <span style="color:var(--purple)">复盘日</span>。</p>
+<p><b>周均约 26–30 小时</b>。如果某天被课或组会占掉，<b>不要第二天补双倍</b>——直接跳过，用缓冲周吸收。这是一份 32 周的马拉松计划，不是 8 周冲刺。</p>
+</div>
+
+<div class="tpl">
+<div class="t">📌 使用前必读（三条纪律）</div>
+<p><b>1. 勾选即存档。</b>每个任务前的复选框会自动保存在本机浏览器中，刷新不丢。每天结束时勾一遍，你会看到总进度条在动——这是坚持最有效的动力来源。</p>
+<p><b>2. 产出优先于输入。</b>这 32 周里，凡是没变成 GitHub 代码、博客文章或实验数据的时间，都算浪费。判断标准很简单：<b>能不能给面试官看？</b></p>
+<p><b>3. 遇到意外用缓冲周，不要改计划。</b>第 31 周（4.19–4.25）是故意留空的，专门用来吸收生病、考试、组会冲突。提前用完它，说明你进度超前。</p>
+</div>
+
+<section class="ph" id="P0">
+<div class="ph-h" style="background:linear-gradient(100deg,#f8717122,#fb923c11);border-left:4px solid #f87171">
+  <div class="ph-id" style="color:#f87171">P0</div>
+  <div>
+    <div class="ph-n">系统与编程基础重建</div>
+    <div class="ph-r">2026.09.21 – 11.01（6 周）</div>
+  </div>
+  <div class="ph-p" data-p="P0">0%</div>
+</div>
+<div class="ph-goal"><b>阶段目标：</b>把 CS 科班的四年基本功压缩成 6 周。这一阶段不碰 AI、不碰 RDMA，只做一件事：让自己能写、能调、能读懂 C 系统代码。</div>
+<div class="ph-why"><b>为什么这么排：</b>上一轮 JD 统计里 C/C++ 在校招出现率 91%，是所有技术项里最高的——高于 RDMA（76%）。这一项不过关，后面全部白搭。</div>
+<div class="wk" id="w1">
+<div class="wk-h">
+  <span class="wk-n">第 1 周</span>
+  <span class="wk-d">9.21 – 9.27</span>
+  <span class="wk-t">数据的机器级表示与 C 内存模型</span>
+  <span class="wk-p" data-w="1">0%</span>
+</div>
+<div class="wk-out">🎯 产出：GitHub repo 建好；Data Lab 通过；指针笔记一份</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">9.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-0-0"><span>环境：Ubuntu 22.04（物理机或双系统，别用虚拟机跑后续 RDMA）+ gcc/gdb/make/cmake/git</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-0-1"><span>CSAPP 第 2 章精读：信息存储、整数表示、补码、移位</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-0-2"><span>在 GitHub 建 repo `ai-net-journey`，建立 week01 目录，之后每周一个目录</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">9.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-1-0"><span>CSAPP 2.2-2.3：有符号/无符号转换陷阱、扩展与截断</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-1-1"><span>动手：写 10 个 printf 打印不同类型，用 gdb 的 `x/16xb` 看真实字节序</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-1-2"><span>记录：大小端、对齐规则</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">9.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-2-0"><span>CSAPP 2.4 浮点（IEEE 754）：只需理解结构，不求推导</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-2-1"><span>Data Lab：bitXor / tmin / isTmax / allOddBits / negate（先做整数部分）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">9.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-3-0"><span>C 指针专题：《C 和指针》第 3-6 章</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-3-1"><span>手画并默写：int *p[10]、int (*p)[10]、int **p、int *func() 的区别</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-3-2"><span>写 5 道指针题的答案并跑通验证</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">9.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-4-0"><span>结构体对齐与内存布局：sizeof/offsetof 实测</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-4-1"><span>理解 cache line = 64B 与 false sharing（后续写高性能代码天天遇到）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-4-2"><span>练习：设计一个避免 false sharing 的结构体</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">9.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-5-0"><span>【长日 6-8h】CSAPP 第 3 章前半：程序编码、数据格式、寻址</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-5-1"><span>x86-64 寄存器表抄一遍并默写</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-5-2"><span>Bomb Lab：phase_1 拆除（gdb + objdump 实战）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-5-3"><span>装好 VS Code + Remote/调试配置</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">9.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w1-6-0"><span>【复盘日 4h】整理本周笔记推 GitHub</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-6-1"><span>画一张「C 数据在内存中的真实布局」图</span></label></li><li><label><input type="checkbox" class="ck" data-k="w1-6-2"><span>自测：能否不查资料手写 strcpy / memcpy 并解释每一步越界风险</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w2">
+<div class="wk-h">
+  <span class="wk-n">第 2 周</span>
+  <span class="wk-d">9.28 – 10.04</span>
+  <span class="wk-t">程序的机器级表示（含国庆，请见提示） ⚑</span>
+  <span class="wk-p" data-w="2">0%</span>
+</div>
+<div class="wk-out">🎯 产出：Bomb Lab 全拆；栈帧结构图</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">9.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-0-0"><span>⚠️ 国庆周（10.1-10.7）：本周五六日与下周一二三为假期。要求：假期内至少保证 4 个有效学习日，另外 3 天正常休息，不要硬撑——硬撑会在第 4 周崩</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-0-1"><span>CSAPP 3.4-3.5：算术逻辑操作、条件码、比较与测试</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">9.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-1-0"><span>CSAPP 3.6 控制：跳转、循环、switch 跳转表</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-1-1"><span>Bomb Lab phase_3（重点：switch 表反推）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">9.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-2-0"><span>CSAPP 3.7 过程：栈帧、调用约定、参数传递寄存器、被调用者保存</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-2-1"><span>Bomb Lab phase_4（递归，看栈帧变化）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">10.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-3-0"><span>CSAPP 3.8 数组与结构体；3.9 缓冲区溢出</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-3-1"><span>Bomb Lab phase_5 + secret_phase</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">10.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-4-0"><span>CSAPP 第 7 章链接：静态链接、符号解析规则、重定位</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-4-1"><span>动手：gcc -c 生成 .o，用 readelf/objdump 手动走一遍链接过程，再用 ld 手动链接</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">10.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-5-0"><span>【长日】Attack Lab：Part I 代码注入、Part II ROP 攻击</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-5-1"><span>总结栈溢出四大防护：canary / NX / ASLR / PIE 各自防什么</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">10.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w2-6-0"><span>【复盘】写博客《从汇编看 C：一次函数调用发生了什么》</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-6-1"><span>整理栈帧结构图（含 rbp/rsp/返回地址/参数/局部变量）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w2-6-2"><span>预习下周 CSAPP 第 8 章</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w3">
+<div class="wk-h">
+  <span class="wk-n">第 3 周</span>
+  <span class="wk-d">10.05 – 10.11</span>
+  <span class="wk-t">异常控制流、进程与信号</span>
+  <span class="wk-p" data-w="3">0%</span>
+</div>
+<div class="wk-out">🎯 产出：Shell Lab（tsh）全部测试点通过</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">10.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-0-0"><span>（10.5 假期）CSAPP 4.1-4.3 处理器体系结构（Y86-64 与流水线）——时间紧可只过一遍概念，不做 lab</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">10.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-1-0"><span>CSAPP 8.1-8.2：异常的分类、陷阱与系统调用、上下文切换</span></label></li><li><label><input type="checkbox" class="ck" data-k="w3-1-1"><span>动手：strace 一个简单程序，看系统调用序列</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">10.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-2-0"><span>CSAPP 8.3-8.4：进程、fork/exec/wait/waitpid</span></label></li><li><label><input type="checkbox" class="ck" data-k="w3-2-1"><span>写代码：一个能解析命令行并执行外部程序的 mini shell（不含作业控制）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">10.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-3-0"><span>CSAPP 8.5 信号：signal/sigaction、pending/blocked 位向量、信号处理竞态</span></label></li><li><label><input type="checkbox" class="ck" data-k="w3-3-1"><span>Shell Lab 信号处理部分：正确处理 SIGCHLD 回收僵尸进程</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">10.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-4-0"><span>CSAPP 8.5 续：慢系统调用被信号中断返回 EINTR 的处理</span></label></li><li><label><input type="checkbox" class="ck" data-k="w3-4-1"><span>Shell Lab：实现 jobs / fg / bg 内建命令</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">10.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-5-0"><span>【长日】完成 Shell Lab 全部 16 个测试点（trace01-16）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w3-5-1"><span>额外：为你的 shell 加一个 mytsh.log 记录每次作业状态变化</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">10.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w3-6-0"><span>【复盘】写博客《fork 与信号：从零写一个 shell》</span></label></li><li><label><input type="checkbox" class="ck" data-k="w3-6-1"><span>自测：解释 fork 后写时复制、exec 后地址空间变化、SIGCHLD 为什么必须用 waitpid 循环回收</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w4">
+<div class="wk-h">
+  <span class="wk-n">第 4 周</span>
+  <span class="wk-d">10.12 – 10.18</span>
+  <span class="wk-t">虚拟内存与动态内存分配</span>
+  <span class="wk-p" data-w="4">0%</span>
+</div>
+<div class="wk-out">🎯 产出：Cache Lab A+B；Malloc Lab 达标</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">10.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-0-0"><span>CSAPP 9.1-9.6：虚拟寻址、页表、地址翻译、TLB、多级页表</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-0-1"><span>理解：一次访存到底要几次内存访问</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">10.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-1-0"><span>Linux 内存管理：brk/mmap、缺页中断、/proc/self/maps</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-1-1"><span>动手：写个程序 malloc 大块内存，用 pmap 观察堆变化</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">10.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-2-0"><span>Cache Lab Part A：写 cache 模拟器（LRU 替换）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-2-1"><span>理解三种失效：cold / conflict / capacity</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">10.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-3-0"><span>Cache Lab Part B：矩阵转置优化（cache 分块）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-3-1"><span>目标：32×32、64×64 都拿到满分 miss 数</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-3-2"><span>这项能力直接迁移到后面的 kernel 与数据排布优化</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">10.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-4-0"><span>Malloc Lab：实现隐式空闲链表 + 首次适配 + 合并</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">10.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-5-0"><span>【长日】Malloc Lab 进阶：显式空闲链表 / 分离空闲链表</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-5-1"><span>目标：throughput &gt; 4000 Kops/s 且 utilization &gt; 60%</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-5-2"><span>同时把代码写成可复用的模块（后续项目会用）</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">10.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w4-6-0"><span>【复盘】自测：说清 malloc(1) 一次调用从用户态到物理页的完整链路</span></label></li><li><label><input type="checkbox" class="ck" data-k="w4-6-1"><span>整理「内存相关八股」一页纸</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w5">
+<div class="wk-h">
+  <span class="wk-n">第 5 周</span>
+  <span class="wk-d">10.19 – 10.25</span>
+  <span class="wk-t">系统级 I/O 与网络编程</span>
+  <span class="wk-p" data-w="5">0%</span>
+</div>
+<div class="wk-out">🎯 产出：高并发 epoll 服务器（Reactor 模型）</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">10.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-0-0"><span>CSAPP 第 10 章系统级 I/O：open/read/write、文件共享、RIO 包</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-0-1"><span>CSAPP 11.1-11.3：客户端-服务器模型、socket API、echo 客户端</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">10.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-1-0"><span>《UNIX Network Programming》Ch3-4：socket/bind/listen/accept/connect</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-1-1"><span>写 echo 客户端 + 服务器（迭代版）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">10.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-2-0"><span>UNP Ch5：迭代服务器的缺陷——僵尸进程、SIGPIPE、慢系统调用 EINTR、accept 返回前连接中止</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-2-1"><span>逐项修复你的 echo 服务器</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">10.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-3-0"><span>UNP Ch6：I/O 复用 select / poll</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-3-1"><span>写 select 版并发服务器，并用压测客户端验证</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">10.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-4-0"><span>epoll 专题：LT vs ET、非阻塞配合、EPOLLONESHOT</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-4-1"><span>写 epoll ET + 非阻塞 IO 的服务器</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-4-2"><span>理解为什么 ET 必须一次读完（EAGAIN）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">10.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-5-0"><span>【长日】Reactor 模式重构：epoll + 非阻塞 + 线程池</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-5-1"><span>压力测试：目标 1 万并发长连接；用 perf top 看热点</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-5-2"><span>把代码整理进 repo 的 `high-perf-server`</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">10.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w5-6-0"><span>【复盘】写 README：设计说明 + 压测数据 + perf 分析</span></label></li><li><label><input type="checkbox" class="ck" data-k="w5-6-1"><span>自测：解释 select/poll/epoll 的复杂度差异与 epoll 红黑树+就绪链表的实现</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w6">
+<div class="wk-h">
+  <span class="wk-n">第 6 周</span>
+  <span class="wk-d">10.26 – 11.01</span>
+  <span class="wk-t">并发编程 + P0 阶段验收</span>
+  <span class="wk-p" data-w="6">0%</span>
+</div>
+<div class="wk-out">🎯 产出：Proxy Lab；P0 验收清单全过</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">10.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-0-0"><span>CSAPP 12.1-12.3：三种并发方式对比（进程 / I/O 多路复用 / 线程）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-0-1"><span>pthread 基础：create/join/detach</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">10.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-1-0"><span>pthread 同步：互斥量、读写锁、条件变量、信号量</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-1-1"><span>写生产者-消费者</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-1-2"><span>死锁四条件与破坏方法</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">10.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-2-0"><span>动手：手写一个线程池（任务队列 + 工作线程 + 优雅退出）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-2-1"><span>把 W5 的服务器改造成 epoll + 线程池多线程版</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">10.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-3-0"><span>无锁编程入门：std::atomic、CAS、内存序（relaxed / acquire-release / seq_cst）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-3-1"><span>理解为什么 x86 是 TSO、为什么需要 mfence</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-3-2"><span>练习：无锁栈（理解 ABA 问题即可）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">10.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-4-0"><span>Proxy Lab：多线程 Web 代理（Part I 顺序、Part II 并发、Part III 缓存）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-4-1"><span>先完成 Part I + II</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">10.31</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-5-0"><span>【长日】完成 Proxy Lab Part III（LRU 缓存 + 读者写者锁）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w6-5-1"><span>跑全部测试</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">11.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w6-6-0"><span>【P0 验收日】逐条过下面的验收清单；整理 repo；做一套 C/C++ 笔试自测（牛客/LeetCode 100 题）</span></label></li></ul></td></tr></tbody></table></div>
+<div class="chk"><div class="chk-t">✅ P0 阶段验收清单（阶段结束当天逐条打勾）</div><ul><li>能在 30 分钟内从零写出一个 epoll 高并发服务器（不查资料）</li><li>能画出函数调用的完整栈帧图，并解释 gdb 反汇编的每一行</li><li>能解释 malloc 从用户态到物理页的全链路</li><li>能说清 select/poll/epoll 的实现差异与时间复杂度</li><li>能写出线程池，并解释锁的选择理由</li><li>GitHub 上有 5 个以上可见的 lab 项目，README 写得清楚</li></ul></div>
+</section><section class="ph" id="P1">
+<div class="ph-h" style="background:linear-gradient(100deg,#f0b42922,#fde04711);border-left:4px solid #f0b429">
+  <div class="ph-id" style="color:#f0b429">P1</div>
+  <div>
+    <div class="ph-n">计算机网络 · 数据中心网络 · RDMA</div>
+    <div class="ph-r">2026.11.02 – 2027.01.03（9 周）</div>
+  </div>
+  <div class="ph-p" data-p="P1">0%</div>
+</div>
+<div class="ph-goal"><b>阶段目标：</b>从「会网络」升级到「懂 AI 集群的网络」。这是你相对 CS 同学拉开差距的核心战场。</div>
+<div class="ph-why"><b>为什么这么排：</b>RDMA 在 JD 中出现率 76% 排第一；拥塞控制 52%。而 PFC/ECN/DCQCN 单个词频虽不高，却是面试追问最深的地方，也正是通信背景的护城河。</div>
+<div class="wk" id="w7">
+<div class="wk-h">
+  <span class="wk-n">第 7 周</span>
+  <span class="wk-d">11.02 – 11.08</span>
+  <span class="wk-t">计算机网络：系统视角</span>
+  <span class="wk-p" data-w="7">0%</span>
+</div>
+<div class="wk-out">🎯 产出：手写 HTTP 客户端；TCP 抓包分析笔记</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">11.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-0-0"><span>应用层：HTTP/1.1 报文格式、DNS</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-0-1"><span>动手：用裸 socket 手写一个 HTTP 客户端（不调库），能 GET 一个网页</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">11.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-1-0"><span>动手：Wireshark / tcpdump 抓包你的 HTTP 请求，逐字段对照报文格式</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-1-1"><span>装好 Wireshark 并熟悉过滤器语法</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">11.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-2-0"><span>传输层：UDP vs TCP；TCP 首部逐字段（seq/ack/win/flags/选项）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-2-1"><span>画三次握手与四次挥手的时序图与状态迁移图</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">11.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-3-0"><span>TCP 可靠传输：超时重传 RTO 计算、快速重传、SACK</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-3-1"><span>动手：用 tc netem 人为造丢包，抓包观察重传行为</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">11.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-4-0"><span>TCP 流量控制：滑动窗口、窗口缩放选项、零窗口探测</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-4-1"><span>动手：用 ss -i 观察 rtt、cwnd、ssthresh 实时变化</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">11.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-5-0"><span>【长日】TCP 拥塞控制：慢启动/拥塞避免/快恢复；Reno → CUBIC → BBR 三者的设计哲学差异</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-5-1"><span>动手：iperf3 打流 + ss -i 采样，画出 cwnd 随时间曲线</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">11.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w7-6-0"><span>【复盘】写博客《TCP 拥塞控制：从 Reno 到 CUBIC 到 BBR》</span></label></li><li><label><input type="checkbox" class="ck" data-k="w7-6-1"><span>自测：BBR 为什么基于带宽时延积而不是丢包</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w8">
+<div class="wk-h">
+  <span class="wk-n">第 8 周</span>
+  <span class="wk-d">11.09 – 11.15</span>
+  <span class="wk-t">数据中心网络架构与无损以太网</span>
+  <span class="wk-p" data-w="8">0%</span>
+</div>
+<div class="wk-out">🎯 产出：DCN 知识图谱；RoCEv2 报文分析</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">11.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-0-0"><span>数据中心网络拓扑：从传统三层到 Spine-Leaf / Fat-Tree / Clos；非对称带宽与 oversubscription</span></label></li><li><label><input type="checkbox" class="ck" data-k="w8-0-1"><span>AI 集群特有的 Rail-optimized 与轨道网络</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">11.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-1-0"><span>ECMP 路由与哈希极化问题；flowlet 与自适应负载均衡（能讲清为什么 AI 流量下 ECMP 会失效）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">11.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-2-0"><span>Incast 问题：多对一通信导致缓冲区溢出与吞吐崩溃</span></label></li><li><label><input type="checkbox" class="ck" data-k="w8-2-1"><span>动手：写个 UDP 多打一的测试，观察吞吐塌陷（可选）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">11.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-3-0"><span>PFC（802.1Qbb）：优先级流控、暂停帧、8 个优先级队列</span></label></li><li><label><input type="checkbox" class="ck" data-k="w8-3-1"><span>重点：PFC 队头阻塞、PFC 死锁、PFC 风暴——面试高频追问点</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">11.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-4-0"><span>ECN（RFC 3168）与 AQM：RED/WRED 的丢包/标记策略、标记概率曲线</span></label></li><li><label><input type="checkbox" class="ck" data-k="w8-4-1"><span>理解 ECN 与 PFC 的分工：一个保零丢包，一个做拥塞信号</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">11.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-5-0"><span>【长日】RoCEv2 协议详解：InfiniBand 传输层 + IP/UDP 封装（目的端口 4791）、与 IB 的映射关系、为什么要 UDP 而不是裸 IP</span></label></li><li><label><input type="checkbox" class="ck" data-k="w8-5-1"><span>画一张完整的 RoCEv2 报文封装图</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">11.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w8-6-0"><span>【复盘】整理「DCN + 无损网络」知识图谱（一张大图）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w8-6-1"><span>自测：RoCEv2 为什么必须构建无损网络？如果不用 PFC 会怎样</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w9">
+<div class="wk-h">
+  <span class="wk-n">第 9 周</span>
+  <span class="wk-d">11.16 – 11.22</span>
+  <span class="wk-t">经典论文精读 I：DCQCN 与 TIMELY</span>
+  <span class="wk-p" data-w="9">0%</span>
+</div>
+<div class="wk-out">🎯 产出：DCQCN 推导笔记；两篇论文精读摘要</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">11.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-0-0"><span>论文精读法：先读摘要与 intro 确定问题，再读设计，最后看实验与讨论；每篇输出一页笔记（问题/方案/关键公式/局限）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">11.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-1-0"><span>精读 DCQCN（SIGCOMM&#x27;15）第一部分：背景——为什么 TCP 不适合 RoCEv2（内核开销、Go-back-N、无损要求）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">11.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-2-0"><span>DCQCN 第二部分：三段式（拥塞点 CP / 通知点 NP / 反应点 RP）与 PFC 的分层配合</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">11.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-3-0"><span>DCQCN 第三部分：速率更新公式逐项推导（α 更新、速率增减、超增恢复）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w9-3-1"><span>把公式手推一遍，这是面试杀手锏</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">11.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-4-0"><span>精读 TIMELY（SIGCOMM&#x27;15）：基于 RTT 的拥塞控制；与 DCQCN 的路线之争（ECN vs RTT 信号）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">11.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-5-0"><span>【长日】精读《RDMA over Commodity Ethernet at Scale》（微软，SIGCOMM&#x27;16）：真实大规模 RoCE 部署经验与踩坑</span></label></li><li><label><input type="checkbox" class="ck" data-k="w9-5-1"><span>这是最贴近工程的一篇，务必读透</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">11.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w9-6-0"><span>【复盘】写博客《DCQCN 算法推导与参数含义》</span></label></li><li><label><input type="checkbox" class="ck" data-k="w9-6-1"><span>三篇论文笔记推 GitHub</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w10">
+<div class="wk-h">
+  <span class="wk-n">第 10 周</span>
+  <span class="wk-d">11.23 – 11.29</span>
+  <span class="wk-t">经典论文精读 II：HPCC 与 Swift</span>
+  <span class="wk-p" data-w="10">0%</span>
+</div>
+<div class="wk-out">🎯 产出：两篇论文笔记；拥塞控制方案对比表</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">11.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-0-0"><span>精读 HPCC（SIGCOMM&#x27;19）：基于 INT（带内网络遥测）的精确拥塞控制；与 DCQCN 的本质区别</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">11.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-1-0"><span>HPCC 第二部分：in-flight 字节数控制与每跳反馈；为什么它恢复快、队列短</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">11.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-2-0"><span>精读 Swift（SIGCOMM&#x27;20，Google）：纯端到端时延目标的拥塞控制；与 BBR 的思想传承</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">11.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-3-0"><span>横向对比：做一个表格对比 DCQCN / TIMELY / HPCC / Swift / BBR 的拥塞信号、控制粒度、适用场景、部署成本</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">11.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-4-0"><span>前沿补充：EQDS（SIGCOMM&#x27;22）、Bolt、以及基于接收端驱动的方案（了解即可，能说出名字与一句话特点）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">11.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-5-0"><span>【长日】论文阅读方法整理：SIGCOMM/NSDI 近年 AI 网络相关论文清单（建一个持续更新的 reading list）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w10-5-1"><span>挑 3 篇存进待读队列</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">11.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w10-6-0"><span>【复盘】自测：如果让你为万卡 MoE 训练集群选拥塞控制方案，你怎么选、怎么论证</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w11">
+<div class="wk-h">
+  <span class="wk-n">第 11 周</span>
+  <span class="wk-d">11.30 – 12.06</span>
+  <span class="wk-t">前沿：UEC / Ultra Ethernet 与 scale-up 语义</span>
+  <span class="wk-p" data-w="11">0%</span>
+</div>
+<div class="wk-out">🎯 产出：UEC 要点笔记（差异化起点）</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">11.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-0-0"><span>⚠️ 这是你的抢跑位：上一轮统计里 UEC/UALink 社招出现率 29%、校招 0%，说明产业已认可而高校还没教。这一周的内容在面试里属于「降维打击」</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">12.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-1-0"><span>UEC（Ultra Ethernet Consortium）规范概览：目标、分层、为什么要做以太网版的 AI 网络栈</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">12.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-2-0"><span>UEC 传输层要点：多路径与报文喷洒（spraying）、可选的有序交付、拥塞管理、scale-up 语义</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">12.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-3-0"><span>UALink：scale-up 域的开放互连标准；与 NVLink 的竞争关系；谁在推（AMD/Intel/博通等）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">12.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-4-0"><span>scale-up vs scale-out：语义差异、时延量级差异（亚微秒 vs 微秒）、为什么 scale-up 难做在以太网</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">12.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-5-0"><span>【长日】顺带了解：在网计算（In-network aggregation / SHARP）、端网协同、网络内归约；以及 Mellanox/NVIDIA SHARP 与华为的在网计算方案</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">12.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w11-6-0"><span>【复盘】写博客《UEC 与 UALink：AI 网络的开放化之争》</span></label></li><li><label><input type="checkbox" class="ck" data-k="w11-6-1"><span>这篇博客会是简历上的差异化证据之一</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w12">
+<div class="wk-h">
+  <span class="wk-n">第 12 周</span>
+  <span class="wk-d">12.07 – 12.13</span>
+  <span class="wk-t">RDMA 编程 I：环境与 Verbs API</span>
+  <span class="wk-p" data-w="12">0%</span>
+</div>
+<div class="wk-out">🎯 产出：从零写的 RDMA Send/Recv 程序</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">12.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-0-0"><span>⚠️ 没有 RDMA 网卡也能学：用 SoftRoCE（内核 rxe 模块）在任意以太网卡上跑真 RDMA 协议栈。两台 Linux 主机（一台也行，loopback 起两个 rxe）即可</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">12.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-1-0"><span>环境：安装 rdma-core / libibverbs / perftest；加载 rdma_rxe 内核模块；`rdma link add rxe_0 type rxe netdev eth0`；用 rping 验证连通</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">12.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-2-0"><span>RDMA 核心概念：Verbs、PD / MR / CQ / QP / WR / WQE / SGE；四种传输类型 RC / UC / UD / RD；理解 RDMA 的「零拷贝 + 内核旁路 + 协议栈卸载」到底省了什么</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">12.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-3-0"><span>跑通 rdma-core 自带的 rdma_client / rdma_server 示例</span></label></li><li><label><input type="checkbox" class="ck" data-k="w12-3-1"><span>逐行读源码，把每个 API 的作用标注出来</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">12.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-4-0"><span>Verbs 状态机：ibv_get_device_list → ibv_open_device → ibv_alloc_pd → ibv_reg_mr → ibv_create_cq → ibv_create_qp → ibv_modify_qp(INIT→RTR→RTS)</span></label></li><li><label><input type="checkbox" class="ck" data-k="w12-4-1"><span>画一张状态迁移图</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">12.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-5-0"><span>【长日】从零（不抄模板）写一个最小的 RDMA Send / Recv 程序，能收发一条消息并打印</span></label></li><li><label><input type="checkbox" class="ck" data-k="w12-5-1"><span>目标：完全理解每个参数的含义</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">12.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w12-6-0"><span>【复盘】perftest 工具集实战：ib_write_bw / ib_read_lat / ib_send_bw</span></label></li><li><label><input type="checkbox" class="ck" data-k="w12-6-1"><span>跑出带宽与时延随消息大小变化的曲线并保存数据</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w13">
+<div class="wk-h">
+  <span class="wk-n">第 13 周</span>
+  <span class="wk-d">12.14 – 12.20</span>
+  <span class="wk-t">RDMA 编程 II：单边操作与性能剖析</span>
+  <span class="wk-p" data-w="13">0%</span>
+</div>
+<div class="wk-out">🎯 产出：RDMA vs TCP 对比实验报告</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">12.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-0-0"><span>单边操作：RDMA Write 实现；理解 rkey / lkey / 远端虚拟地址是怎么安全传递的</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">12.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-1-0"><span>单边操作：RDMA Read 实现；Write with Immediate Data 的用途（通知对端完成）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">12.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-2-0"><span>ibv_post_send 的 flags：FENCE / SIGNALED / SOLICITED / INLINE；为什么频繁请求完成事件会拖慢性能</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">12.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-3-0"><span>完成处理：轮询 CQ vs 事件通知的取舍；ibv_poll_cq 与 work completion 结构</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">12.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-4-0"><span>【实验】RDMA vs TCP 对比：在同样链路上测带宽 / 时延 / CPU 占用率</span></label></li><li><label><input type="checkbox" class="ck" data-k="w13-4-1"><span>用 mpstat 记 CPU，画三张对比图</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">12.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-5-0"><span>【长日】抓包分析 RoCEv2 报文（SoftRoCE 走内核 UDP 4791，用 tcpdump 可抓）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w13-5-1"><span>逐字段对照你 W8 画的封装图验证</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">12.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w13-6-0"><span>【复盘】把 RDMA demo 工程化：Makefile + 错误处理 + benchmark 脚本 + README</span></label></li><li><label><input type="checkbox" class="ck" data-k="w13-6-1"><span>推 GitHub</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w14">
+<div class="wk-h">
+  <span class="wk-n">第 14 周</span>
+  <span class="wk-d">12.21 – 12.27</span>
+  <span class="wk-t">RDMA 编程 III：进阶与 HPC 接口</span>
+  <span class="wk-p" data-w="14">0%</span>
+</div>
+<div class="wk-out">🎯 产出：MPI 跑通；UCX 了解</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">12.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-0-0"><span>多 QP 与连接管理：为什么 NCCL 会对同一对 GPU 建多个 QP；QP 数量与并发度、cache 占用的权衡</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">12.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-1-0"><span>SRQ（共享接收队列）：解决多连接下接收端 WQE 耗尽的问题</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">12.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-2-0"><span>RDMA 原子操作与 Memory Window；以及在分布式锁/一致性场景的用法（了解）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">12.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-3-0"><span>GPUDirect RDMA 概念与数据通路：NIC → PCIe → GPU 显存；与 GPUDirect P2P / NVLink 的区别</span></label></li><li><label><input type="checkbox" class="ck" data-k="w14-3-1"><span>画数据通路图</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">12.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-4-0"><span>MPI 实战：装 OpenMPI，跑通 MPI_Allreduce / MPI_Alltoall；理解 OpenMPI 底层是怎么用 RDMA 的</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">12.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-5-0"><span>【长日】UCX 框架了解：ucx_perftest 跑一跑；理解 UCX 作为「通信中间件抽象层」的定位（摩尔线程/沐曦 JD 明确提到 UCX）</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">12.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w14-6-0"><span>【复盘】综合实验：同一份 Allreduce，分别用 MPI / 自己写的 socket 版对比性能并记录数据</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w15">
+<div class="wk-h">
+  <span class="wk-n">第 15 周</span>
+  <span class="wk-d">12.28 – 1.03</span>
+  <span class="wk-t">P1 阶段复盘与输出（跨年周）</span>
+  <span class="wk-p" data-w="15">0%</span>
+</div>
+<div class="wk-out">🎯 产出：3-4 篇技术博客；知识库成型</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">12.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-0-0"><span>把 W7-W14 的所有实验数据、图、笔记整理进 GitHub 的 `docs/` 目录</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">12.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-1-0"><span>写博客 1：《从零写一个 RDMA 程序：Verbs API 全解析》（长文，配代码）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">12.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-2-0"><span>写博客 2：《DCQCN / TIMELY / HPCC / Swift：四代数据中心拥塞控制对比》</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">12.31</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-3-0"><span>写博客 3：《RDMA vs TCP：实测数据告诉你差别在哪》（贴你的真实数据）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">1.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-4-0"><span>写博客 4：《UEC 与 UALink：AI 网络的开放化之争》（已在 W11 写好，此日润色发布）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">1.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-5-0"><span>【长日】做一套「AI 网络岗八股自测卷」：自己出 50 道题并作答（覆盖 RDMA/RoCE/PFC/ECN/集合通信/TCP）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w15-5-1"><span>这份卷子会一直用到秋招</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">1.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w15-6-0"><span>【P1 验收日】逐条过验收清单；同时开始物色寒假/春季日常实习（见下方提示）</span></label></li></ul></td></tr></tbody></table></div>
+<div class="chk"><div class="chk-t">✅ P1 阶段验收清单（阶段结束当天逐条打勾）</div><ul><li>能不看资料从零写出 RDMA Send/Recv 与 Write 程序</li><li>能手推 DCQCN 的速率更新公式并解释每个参数的物理含义</li><li>能说清 PFC 死锁的成因与三种缓解手段</li><li>能画出 RoCEv2 完整报文封装图</li><li>能讲清 UEC 相对传统 RoCE 的三个关键改进</li><li>GitHub 上有 4 篇以上原创技术博客，至少 1 篇被搜索引擎收录</li></ul></div>
+</section><section class="ph" id="P2">
+<div class="ph-h" style="background:linear-gradient(100deg,#38bdf822,#818cf811);border-left:4px solid #38bdf8">
+  <div class="ph-id" style="color:#38bdf8">P2</div>
+  <div>
+    <div class="ph-n">集合通信 · GPU · 差异化项目</div>
+    <div class="ph-r">2027.01.04 – 2027.02.28（8 周）</div>
+  </div>
+  <div class="ph-p" data-p="P2">0%</div>
+</div>
+<div class="ph-goal"><b>阶段目标：</b>做出「别人做不了」的东西。前两个阶段是入场券，这一阶段决定你拿 SP 还是白菜。</div>
+<div class="ph-why"><b>为什么这么排：</b>NCCL 校招出现率 73%、集合通信 64%、CUDA 55%、内核/驱动 55%。同时这 8 周产出的项目是简历上唯一能区别于其他候选人的东西。</div>
+<div class="wk" id="w16">
+<div class="wk-h">
+  <span class="wk-n">第 16 周</span>
+  <span class="wk-d">1.04 – 1.10</span>
+  <span class="wk-t">NCCL 源码精读 I</span>
+  <span class="wk-p" data-w="16">0%</span>
+</div>
+<div class="wk-out">🎯 产出：NCCL 架构图；编译并跑通 nccl-tests</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">1.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-0-0"><span>⚠️ 没有 GPU 也能学：源码可以纯读；跑测试需要 GPU。北航杭州校区/导师项目组/云服务器（如 AutoDL 按小时租 A100）都可用，2 卡即可，成本约 10-20 元/小时，这一阶段预算 500-800 元足够</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">1.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-1-0"><span>NCCL 架构总览：API 层 / 拓扑层 / 传输层 / 算法层；从 ncclAllReduce 到 kernel launch 的调用链</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">1.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-2-0"><span>环境：git clone NCCL 源码，本地编译；下载 nccl-tests 并跑 all_reduce_perf</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">1.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-3-0"><span>初始化流程：bootstrap 网络（TCP）、uniqueId 交换、rank 发现</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">1.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-4-0"><span>拓扑发现：PCIe / NVLink 拓扑图的构建；CPU 亲和性与 NUMA 感知</span></label></li><li><label><input type="checkbox" class="ck" data-k="w16-4-1"><span>动手：nvidia-smi topo -m 与 nccl-topo 输出对照</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">1.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-5-0"><span>【长日】Communicator 建立：ncclCommInitRank 内部流程；channel 的概念与为什么要有多个 channel</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">1.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w16-6-0"><span>【复盘】画一张 NCCL 分层架构图（含每个子目录的作用）；推 GitHub</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w17">
+<div class="wk-h">
+  <span class="wk-n">第 17 周</span>
+  <span class="wk-d">1.11 – 1.17</span>
+  <span class="wk-t">NCCL 源码精读 II 与集合通信算法</span>
+  <span class="wk-p" data-w="17">0%</span>
+</div>
+<div class="wk-out">🎯 产出：手写 Ring AllReduce；算法性能建模</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">1.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-0-0"><span>传输层：P2P（NVLink / PCIe）、SHM（共享内存）、NET（Socket / IB）三种 transport 的选择逻辑</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">1.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-1-0"><span>AllReduce 算法族：Ring AllReduce 的两阶段（reduce-scatter + all-gather）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w17-1-1"><span>推导通信量：每节点 2(N-1)/N × S</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">1.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-2-0"><span>AllReduce 算法族续：Tree / 双二叉树（double binary tree）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w17-2-1"><span>什么规模下 tree 优于 ring（小数据量、高节点数）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">1.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-3-0"><span>其他集合操作：AllGather、ReduceScatter、Broadcast、AllToAll</span></label></li><li><label><input type="checkbox" class="ck" data-k="w17-3-1"><span>重点：AllToAll 在 MoE（专家并行）场景下成为瓶颈，这是当下最热的问题</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">1.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-4-0"><span>【动手】自己实现 Ring AllReduce：用 MPI 或 裸 socket 都行，跑通并与 NCCL 对比（你会深刻理解为啥 NCCL 快）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">1.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-5-0"><span>【长日】性能建模：给定节点数 N、带宽 B、数据量 S，手算 Ring AllReduce 的理论时间；与实测对比，分析差距来源</span></label></li><li><label><input type="checkbox" class="ck" data-k="w17-5-1"><span>写出一份建模报告</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">1.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w17-6-0"><span>【复盘】写博客《NCCL 是怎么做 AllReduce 的：从源码到性能模型》</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w18">
+<div class="wk-h">
+  <span class="wk-n">第 18 周</span>
+  <span class="wk-d">1.18 – 1.24</span>
+  <span class="wk-t">CUDA 与 GPU 基础 + PyTorch DDP</span>
+  <span class="wk-p" data-w="18">0%</span>
+</div>
+<div class="wk-out">🎯 产出：CUDA 矩阵乘；Nsight profile 报告</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">1.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-0-0"><span>CUDA 编程模型：grid / block / warp / thread；SIMT 与 warp divergence；内存层次（global / shared / register / constant）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">1.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-1-0"><span>CUDA 实战 1：向量加法、归约（reduction）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w18-1-1"><span>理解 bank conflict 与 warp shuffle</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">1.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-2-0"><span>CUDA 实战 2：矩阵乘法，从不优化到 shared memory tiling，逐步测速并记录优化幅度</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">1.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-3-0"><span>性能剖析工具：Nsight Systems（时间线、kernel 与 memcpy 重叠）与 Nsight Compute（occupancy、带宽利用率）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w18-3-1"><span>对你的矩阵乘出一份 profile 报告</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">1.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-4-0"><span>GPU 硬件拓扑：NVLink / NVSwitch / PCIe / NUMA 的带宽量级；nvidia-smi topo -m 读图</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">1.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-5-0"><span>【长日】PyTorch DDP 源码：reducer、bucket 机制、梯度 bucket 与反向计算的重叠（这才是「通算重叠」的落地形态）</span></label></li><li><label><input type="checkbox" class="ck" data-k="w18-5-1"><span>动手：单机多卡 DDP 训练一个小模型，用 Nsight 看通信-计算重叠</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">1.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w18-6-0"><span>【复盘】自测：什么是通算重叠？为什么 bucket 太小或太大都不好？</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w19">
+<div class="wk-h">
+  <span class="wk-n">第 19 周</span>
+  <span class="wk-d">1.25 – 1.31</span>
+  <span class="wk-t">差异化项目立项（关键决策周）</span>
+  <span class="wk-p" data-w="19">0%</span>
+</div>
+<div class="wk-out">🎯 产出：项目立项文档 + 仿真环境跑通</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">1.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-0-0"><span>⚠️ 这一周决定你简历上最有分量的一行，请认真对待。四个候选选题（来自上一轮分析）：①OCS 感知的集合通信调度 ②光链路特性对 RoCE 拥塞控制的影响 ③光电混合拓扑的 AI 集群网络仿真平台 ④scale-up 域光互连架构评估</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">1.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-1-0"><span>我的建议：选 ① 或 ③。理由：①能直接挂到「MoE 的 AllToAll 瓶颈」这个当下最热的问题上；③工程量大但面试最好讲、最易开源攒 star。若你组里有光交换/光链路实测条件，②的独特性最高</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">1.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-2-0"><span>定题：写下问题陈述、假设、方法、评价指标、预期结论（一页立项文档）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">1.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-3-0"><span>【关键】与导师沟通：把题目包装成「AI 集群光互连 / 光网络与分布式训练协同」，落到沈平教授 AI Photonics 的框架内。这样既用上实验室资源，又不显得跑偏</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">1.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-4-0"><span>仿真器选型：ASTRA-sim（通信-计算联合仿真，最适合 ①）/ NS-3（网络细粒度，适合 ②）/ ht-sim（轻量，适合快速验证）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">1.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-5-0"><span>【长日】环境搭建：装好仿真器，跑通自带示例，输出第一张基线结果图</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">1.31</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w19-6-0"><span>【复盘】立项文档 + 基线结果发给导师看，拿到反馈；同步开始写项目 README</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w20">
+<div class="wk-h">
+  <span class="wk-n">第 20 周</span>
+  <span class="wk-d">2.01 – 2.07</span>
+  <span class="wk-t">🐍 春节弹性周 ⚑</span>
+  <span class="wk-p" data-w="20">0%</span>
+</div>
+<div class="wk-out">🎯 产出：保持手感，不追求进度</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">2.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-0-0"><span>⚠️ 2027 年春节约在 2 月 6 日（请以校历为准微调）。这一周是计划里唯一的缓冲周，也是防止 burnout 的关键设计。允许自己只完成 40%</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">2.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-1-0"><span>轻量任务：读完 W19 存下的 1 篇 SIGCOMM 论文</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">2.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-2-0"><span>轻量任务：给项目写数据生成脚本（低强度）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">2.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-3-0"><span>轻量任务：整理简历素材清单（把做过的事列出来，先不写简历）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">2.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-4-0"><span>轻量任务：看 2 场技术分享 / 公开课（推荐 CMU 或 NVIDIA GTC 的网络专题）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周六</span><span class="dt">2.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-5-0"><span>轻量任务：陪家人 + 休息；把前 19 周的笔记扫一遍，补上遗漏</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">2.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w20-6-0"><span>【复盘】用 30 分钟做一次「半程回顾」：哪几周执行得好、哪几周掉了链子、3 月投递季前还差什么</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w21">
+<div class="wk-h">
+  <span class="wk-n">第 21 周</span>
+  <span class="wk-d">2.08 – 2.14</span>
+  <span class="wk-t">项目开发 I</span>
+  <span class="wk-p" data-w="21">0%</span>
+</div>
+<div class="wk-out">🎯 产出：核心模块完成</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">2.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-0-0"><span>按立项文档实现核心模块（如 OCS 拓扑重构模块 / 光链路误码模型）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">2.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-1-0"><span>继续核心模块；每写 100 行就跑一次验证，别攒到最后</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">2.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-2-0"><span>构建实验场景：定义对比基线（baseline）与你提出的方案（proposed）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">2.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-3-0"><span>跑第一组实验；检查数据是否合理，不合理立刻查 bug</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">2.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-4-0"><span>补实验：参数敏感性分析（至少扫 3 个关键参数）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">2.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-5-0"><span>【长日】出第一批结果图；判断结论是否成立</span></label></li><li><label><input type="checkbox" class="ck" data-k="w21-5-1"><span>不成立就调整假设——这是正常的研究过程，别慌</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">2.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w21-6-0"><span>【复盘】把中期结果同步给导师；同时把代码推 GitHub（哪怕还很粗糙，时间戳本身就是证据）</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w22">
+<div class="wk-h">
+  <span class="wk-n">第 22 周</span>
+  <span class="wk-d">2.15 – 2.21</span>
+  <span class="wk-t">项目开发 II</span>
+  <span class="wk-p" data-w="22">0%</span>
+</div>
+<div class="wk-out">🎯 产出：完整实验结果</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">2.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-0-0"><span>完善实验：补齐消融实验（ablation）与不同规模下的扩展性测试</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">2.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-1-0"><span>结果可视化：出 3-5 张高质量图（带宽/时延/加速比/扩展性）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">2.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-2-0"><span>写技术报告初稿（按论文结构：Intro / Motivation / Design / Evaluation / Discussion）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">2.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-3-0"><span>继续写报告；同时把代码重构一遍（别人能 clone 下来跑通）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">2.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-4-0"><span>写 README：一句话说清这项目解决什么问题、怎么跑、得到什么结论</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">2.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-5-0"><span>【长日】把完整实验跑一遍并保存原始数据与脚本（可复现性是加分项）</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">2.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w22-6-0"><span>【复盘】自测：如果面试官让你 5 分钟讲清这个项目，你怎么讲？写好这份讲稿</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w23">
+<div class="wk-h">
+  <span class="wk-n">第 23 周</span>
+  <span class="wk-d">2.22 – 2.28</span>
+  <span class="wk-t">2 月收尾：简历初稿与投递准备</span>
+  <span class="wk-p" data-w="23">0%</span>
+</div>
+<div class="wk-out">🎯 产出：简历 v1；项目开源；博客发布</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">2.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-0-0"><span>⚠️ 时间校准：大厂 2028 届暑期实习招聘通常在 3 月启动、4 月达峰。你必须在 2 月底前让简历可投——这一周就是死线</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">2.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-1-0"><span>简历 v1：一页纸。结构：教育背景 / 技能 / 项目（2-3 个，按含金量排序）/ 论文与开源 / 获奖</span></label></li><li><label><input type="checkbox" class="ck" data-k="w23-1-1"><span>项目描述一律用「动作 + 方法 + 量化结果」句式</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">2.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-2-0"><span>简历修改：找 2-3 个人（学长、实习过的同学、导师）帮你挑刺；重点检查有没有「假大空」词</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">2.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-3-0"><span>项目博客发布：把你的差异化项目写成一篇长文（中文），配图配数据</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">2.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-4-0"><span>开源：项目推 GitHub 并写清 README；在相关社区（如知乎/小红书/V2EX）发一次，收集反馈</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">2.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-5-0"><span>【长日】建立投递追踪表：公司 / 岗位 / 投递日期 / 进度 / 内推人 / 备注</span></label></li><li><label><input type="checkbox" class="ck" data-k="w23-5-1"><span>目标清单：阿里（杭州/北京）、字节（杭州/北京）、腾讯、华为、NVIDIA、DeepSeek、寒武纪、壁仞、摩尔线程、沐曦</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">2.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w23-6-0"><span>【P2 验收日】过验收清单；内推渠道开始联系（北航校友群、导师资源、脉脉、牛客——内推能显著提高进入面试的概率）</span></label></li></ul></td></tr></tbody></table></div>
+<div class="chk"><div class="chk-t">✅ P2 阶段验收清单（阶段结束当天逐条打勾）</div><ul><li>能讲清 NCCL 的 Ring AllReduce 与 Tree AllReduce 的适用边界并给出推导</li><li>能独立实现一个简单的 AllReduce</li><li>能读懂并解释 PyTorch DDP 的 bucket 与通算重叠机制</li><li>有一个可演示、可复现、有真实数据的差异化项目</li><li>简历 v1 完成且经过至少 3 人审阅</li><li>投递追踪表建好，内推渠道至少联系上 3 个</li></ul></div>
+</section><section class="ph" id="P3">
+<div class="ph-h" style="background:linear-gradient(100deg,#34d39922,#22d3ee11);border-left:4px solid #34d399">
+  <div class="ph-id" style="color:#34d399">P3</div>
+  <div>
+    <div class="ph-n">实习投递季 · 面试冲刺</div>
+    <div class="ph-r">2027.03.01 – 2027.05.02（9 周）</div>
+  </div>
+  <div class="ph-p" data-p="P3">0%</div>
+</div>
+<div class="ph-goal"><b>阶段目标：</b>拿到至少一个对口暑期实习 offer——这是两年制硕士性价比最高的一条路，能直接绕开秋招的简历海选。</div>
+<div class="ph-why"><b>为什么这么排：</b>上一轮统计的 25 份 JD 里，阿里「AI Infra 高性能网络研发工程师（2027届实习）」和字节「高性能网络研发工程师 - AI算力基础设施（2027届，北京/杭州）」与你的届数、地域、方向精确匹配，是首要目标。</div>
+<div class="wk" id="w24">
+<div class="wk-h">
+  <span class="wk-n">第 24 周</span>
+  <span class="wk-d">3.01 – 3.07</span>
+  <span class="wk-t">八股一轮 + 简历定稿 ⚑</span>
+  <span class="wk-p" data-w="24">0%</span>
+</div>
+<div class="wk-out">🎯 产出：八股笔记 v1；简历 v2</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">3.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-0-0"><span>八股模块 1：C/C++（内存、多态、虚函数表、智能指针、move 语义、STL 容器底层）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">3.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-1-0"><span>八股模块 2：操作系统（进程线程、调度、虚拟内存、文件系统、IO 多路复用）——你 W1-W6 已打底，这里只做查漏</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">3.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-2-0"><span>八股模块 3：计算机网络（TCP/UDP/IP/HTTP/HTTPS）——重点准备「为什么」而不是「是什么」</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">3.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-3-0"><span>八股模块 4：AI 网络专项（RDMA/RoCE/PFC/ECN/DCQCN/NCCL）——这是你的差异化区，要做到能讲 40 分钟</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">3.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-4-0"><span>算法：LeetCode Hot 100 过一遍（每天 3 题节奏）；重点题型：链表、树、动态规划、二分、滑动窗口</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">3.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-5-0"><span>【长日】模拟面试：找一个同伴或用 AI 做技术面模拟，重点练「项目深挖」——面试官会连问 5 层 why</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">3.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w24-6-0"><span>【复盘】简历 v2 定稿；八股笔记整理成一份可速查的文档</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w25">
+<div class="wk-h">
+  <span class="wk-n">第 25 周</span>
+  <span class="wk-d">3.08 – 3.14</span>
+  <span class="wk-t">正式开投（3 月：暑期实习主战场） ⚑</span>
+  <span class="wk-p" data-w="25">0%</span>
+</div>
+<div class="wk-out">🎯 产出：投递 ≥15 家</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">3.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-0-0"><span>⚠️ 投递节奏：不要一次投完。先投 3-5 家「练手档」，攒面试经验，一周后再投心目中的第一梯队</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">3.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-1-0"><span>投递批次 1（练手）：中小厂 / 国产 GPU 厂 / 二线云——目标是拿面试经验</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周三</span><span class="dt">3.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-2-0"><span>继续投递 + 复盘第一批笔面试；记录每场被问到的题，当晚就补进笔记</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">3.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-3-0"><span>八股模块 5：项目深挖准备——为你的差异化项目准备 10 个可能被追问的问题与答案</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">3.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-4-0"><span>算法保持每天 3 题；同时练手撕代码（白板写：线程池、LRU、生产者消费者、无锁队列）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">3.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-5-0"><span>【长日】投递批次 2（第一梯队）：阿里、字节、腾讯、华为、NVIDIA、DeepSeek——用内推码投</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">3.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w25-6-0"><span>【复盘】更新投递追踪表；本周目标：投递 ≥15 家，至少进 3 场面试</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w26">
+<div class="wk-h">
+  <span class="wk-n">第 26 周</span>
+  <span class="wk-d">3.15 – 3.21</span>
+  <span class="wk-t">面试攻坚 I</span>
+  <span class="wk-p" data-w="26">0%</span>
+</div>
+<div class="wk-out">🎯 产出：每周 ≥3 场面试</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">3.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-0-0"><span>针对本周每场面试做公司功课：业务、技术栈、最近的论文/开源项目（阿里 HPN、字节火山引擎、腾讯星脉、华为昇腾互连）</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周二</span><span class="dt">3.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-1-0"><span>面试后立即复盘：录音/回忆 + 记录「答不上来的题」+ 当晚补上</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">3.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-2-0"><span>继续面试 + 保持算法手感（每天 2 题即可，别占太多时间）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">3.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-3-0"><span>项目讲述打磨：练到能 3 分钟讲清 + 10 分钟深挖 + 画出架构图</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">3.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-4-0"><span>继续面试；同步推进项目（面试官问「最近在做什么」时要有新进展可说）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">3.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-5-0"><span>【长日】整理「高频真题集」：把面过的题按公司分类，你会发现重复率极高</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">3.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w26-6-0"><span>【复盘】本周目标：≥3 场面试，且每场都有明确改进点</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w27">
+<div class="wk-h">
+  <span class="wk-n">第 27 周</span>
+  <span class="wk-d">3.22 – 3.28</span>
+  <span class="wk-t">面试攻坚 II</span>
+  <span class="wk-p" data-w="27">0%</span>
+</div>
+<div class="wk-out">🎯 产出：争取第一个 offer</div>
+<table class="wt"><tbody><tr class="reviewday">
+<td class="dd"><span class="wd">周一</span><span class="dt">3.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-0-0"><span>继续面试与复盘；重点补强反复答不好的模块</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">3.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-1-0"><span>行为面试准备：宝洁八大问改写版（为什么转方向 / 最有成就感的事 / 冲突处理 / 失败经历）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">3.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-2-0"><span>导师关系维护：同步汇报进展，避免后期毕设与实习冲突（这件事一定要提前做）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">3.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-3-0"><span>继续面试；如有 OC（口头 offer），开始了解团队与业务</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">3.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-4-0"><span>反问环节准备：问团队规模、技术栈、实习生是否参与核心模块、转正率——这既是获取信息，也是展示成熟度</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">3.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-5-0"><span>【长日】继续投递补漏（部分公司批次晚）；算法保持</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">3.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w27-6-0"><span>【复盘】目标：拿到第一个实习 offer。拿到后不要停，继续面——手里有 offer 才有谈薪筹码</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w28">
+<div class="wk-h">
+  <span class="wk-n">第 28 周</span>
+  <span class="wk-d">3.29 – 4.04</span>
+  <span class="wk-t">多线并进</span>
+  <span class="wk-p" data-w="28">0%</span>
+</div>
+<div class="wk-out">🎯 产出：offer 对比表</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">3.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-0-0"><span>⚠️ 关键策略：所有 offer 尽量在同一时间窗口内出结果，这是谈薪的核心技巧。拿到早的可以礼貌告知HR「还在流程中，能否宽限一周」</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">3.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-1-0"><span>继续面试第一梯队剩余流程</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">3.31</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-2-0"><span>建立 offer 对比表：团队方向 / 是否核心 / 实习内容是否可写进简历 / 转正率 / 薪资 / 城市 / 导师放行难度</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">4.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-3-0"><span>深度调研：找目标团队的在职/前员工聊（脉脉、牛客、校友群），问清「实习生到底干什么」——有些岗名义 AI 网络实则是运维</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">4.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-4-0"><span>继续推进；同步准备「转正导向」的工作方式（实习一开始就问清转正标准）</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">4.03</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-5-0"><span>【长日】如有多家进入终面，集中安排在同一周</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">4.04</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w28-6-0"><span>【复盘】更新对比表；明确自己的第一选择与底线</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w29">
+<div class="wk-h">
+  <span class="wk-n">第 29 周</span>
+  <span class="wk-d">4.05 – 4.11</span>
+  <span class="wk-t">收口与决策 ⚑</span>
+  <span class="wk-p" data-w="29">0%</span>
+</div>
+<div class="wk-out">🎯 产出：确定实习去向</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">4.05</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-0-0"><span>⚠️ 选择标准排序（针对你的目标：最终薪资最高）：①实习内容是否能成为简历上的硬通货 ②是否核心团队 ③转正率 ④薪资 ⑤城市。注意薪资排第 4——暑期实习的月薪差 5K，换来的简历含金量差异可能值 10 万年包</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">4.06</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-1-0"><span>完成剩余终面</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">4.07</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-2-0"><span>与导师确认暑期安排（实习 vs 实验室），提前谈好</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">4.08</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-3-0"><span>接受 offer，婉拒其他（保持礼貌，留下联系方式——秋招还会再见）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">4.09</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-4-0"><span>签三方/实习协议前：确认转正机制、实习时长要求、是否有竞业</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">4.10</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-5-0"><span>【长日】实习前的知识预热：了解即将接触的技术栈与代码库</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">4.11</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w29-6-0"><span>【复盘】如果此时还没有 offer，启动 B 计划（见文末风险预案）</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w30">
+<div class="wk-h">
+  <span class="wk-n">第 30 周</span>
+  <span class="wk-d">4.12 – 4.18</span>
+  <span class="wk-t">实习前置准备</span>
+  <span class="wk-p" data-w="30">0%</span>
+</div>
+<div class="wk-out">🎯 产出：技术预热完成</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">4.12</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-0-0"><span>预习实习团队可能用到的技术栈（如公司自研通信库 / 内部网络平台 / 特定网卡 SDK）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">4.13</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-1-0"><span>补 Linux 内核网络子系统（如果去的是协议栈/驱动方向）：netfilter、sk_buff、NAPI、驱动框架</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">4.14</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-2-0"><span>补 Go（部分基础架构团队用 Go）：语法 + goroutine + channel + net 包，一周够用</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">4.15</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-3-0"><span>把 32 周的所有笔记整理成一份个人知识库（面试与实习都会用）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">4.16</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-4-0"><span>休息调整：投递季很耗，这一周适当减量</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">4.17</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-5-0"><span>【长日】为暑期实习设定 3 个明确目标（例如：独立完成一个优化并合入主干 / 拿到转正意向 / 产出一份内部技术文档）</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">4.18</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w30-6-0"><span>【复盘】回顾整个 P0-P3：哪些做对了、哪些浪费了时间、秋招要怎么改进</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w31">
+<div class="wk-h">
+  <span class="wk-n">第 31 周</span>
+  <span class="wk-d">4.19 – 4.25</span>
+  <span class="wk-t">缓冲周（4.19-4.25）</span>
+  <span class="wk-p" data-w="31">0%</span>
+</div>
+<div class="wk-out">🎯 产出：查漏补缺</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">4.19</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-0-0"><span>⚠️ 缓冲周是计划里故意留的空白。如果你进度超前，用来深化；如果落后，用来追赶。任何 32 周计划都会遇到意外，别让意外变成放弃的理由</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">4.20</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-1-0"><span>根据当前状态自行安排：补八股 / 补项目 / 补算法 / 休息</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">4.21</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-2-0"><span>自行安排</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">4.22</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-3-0"><span>自行安排</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">4.23</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-4-0"><span>自行安排</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周六</span><span class="dt">4.24</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-5-0"><span>自行安排</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">4.25</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w31-6-0"><span>【复盘】重新评估 6 月暑期实习前的准备度</span></label></li></ul></td></tr></tbody></table></div><div class="wk" id="w32">
+<div class="wk-h">
+  <span class="wk-n">第 32 周</span>
+  <span class="wk-d">4.26 – 5.02</span>
+  <span class="wk-t">暑期实习前最后准备</span>
+  <span class="wk-p" data-w="32">0%</span>
+</div>
+<div class="wk-out">🎯 产出：就绪</div>
+<table class="wt"><tbody><tr class="">
+<td class="dd"><span class="wd">周一</span><span class="dt">4.26</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-0-0"><span>确认实习入职时间、住宿、通勤（杭州/北京/深圳各有不同，提前安排）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周二</span><span class="dt">4.27</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-1-0"><span>与导师敲定暑期科研安排，避免实习期间两边拉扯</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周三</span><span class="dt">4.28</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-2-0"><span>技术预热收尾</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周四</span><span class="dt">4.29</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-3-0"><span>整理好你的 GitHub 与博客，确保公开可见（面试官会看）</span></label></li></ul></td></tr><tr class="">
+<td class="dd"><span class="wd">周五</span><span class="dt">4.30</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-4-0"><span>心态准备：实习的核心目标是转正与积累硬通货，不是拿工资</span></label></li></ul></td></tr><tr class="longday">
+<td class="dd"><span class="wd">周六</span><span class="dt">5.01</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-5-0"><span>【长日】休息 + 准备入职材料</span></label></li></ul></td></tr><tr class="reviewday">
+<td class="dd"><span class="wd">周日</span><span class="dt">5.02</span></td>
+<td class="tt"><ul><li><label><input type="checkbox" class="ck" data-k="w32-6-0"><span>【复盘】进入暑期实习</span></label></li></ul></td></tr></tbody></table></div>
+<div class="chk"><div class="chk-t">✅ P3 阶段验收清单（阶段结束当天逐条打勾）</div><ul><li>投递 ≥15 家，其中第一梯队 ≥6 家</li><li>完成 ≥10 场技术面试并逐场复盘</li><li>拿到 ≥1 个对口暑期实习 offer（理想 2-3 个）</li><li>八股笔记与真题集成型，可复用至秋招</li><li>GitHub 与博客保持活跃，有真实可查的项目与时间戳</li></ul></div>
+</section>
+
+<h2 id="later">后续阶段：暑期实习 · 秋招 · 毕设</h2>
+<div class="lt">
+<div class="lt-n">暑期实习（2027.06 – 08）</div>
+<ul><li>第 1 周：搞清转正标准，直接问 mentor「什么样的表现能转正」</li><li>第 2-3 周：吃透团队代码库，主动接一个能出成果的小任务</li><li>第 4-6 周：做出可量化的成果（一次性能优化、一个 bug 根因、一份 benchmark 报告）</li><li>第 7-8 周：争取合入主干代码；同步准备秋招提前批（7 月就开始了，别等实习结束）</li><li>关键：把实习成果写成技术博客（脱敏后），这是秋招最强弹药</li></ul></div><div class="lt">
+<div class="lt-n">秋招（2027.08 – 11）</div>
+<ul><li>7 月起关注提前批——很多大厂 AI Infra 提前批在 7 月就开始，且提前批不影响正式批</li><li>8-9 月正式批：以实习经历 + 差异化项目为主打，你的简历此时已远超同届</li><li>谈薪策略：手里有 ≥2 个 offer 再谈；用 AI 网络方向的稀缺性议价</li><li>薪资锚点（参考上一轮 JD 数据）：国内大厂该方向 SP/SSP 常见 40-70W；海外 NVIDIA/字节 base 约 10.8-30 万美元+股票</li><li>不要只投一家：多轮并行、互通信息，是最大化薪资的唯一方法</li></ul></div><div class="lt">
+<div class="lt-n">毕设与深化（2027.12 – 2028.06）</div>
+<ul><li>毕设方向直接对齐实习内容，一鱼两吃</li><li>争取把差异化项目投出去（SIGCOMM/NSDI/MLSys/HotNets/PPoPP，或 JLT/OFC）</li><li>持续维护 GitHub 与博客——入职后这些资产会继续产生复利</li></ul></div>
+
+<h2>风险预案</h2>
+<table class="rk"><thead><tr><th>如果发生</th><th>怎么办</th></tr></thead><tbody><tr><td class="rk">时间不够 / 某几周掉队</td><td>不要试图补回所有内容。优先保住：C/C++ → RDMA → NCCL → 差异化项目。八股和算法可以压缩，这四项不行。用 W31 缓冲周吸收冲击。</td></tr><tr><td class="rk">课题组任务重、导师不放</td><td>把课题往交叉点靠（AI 集群光互连），让 AI 网络学习成为「课题需要」而非「私下转行」。同时每周固定同步进展，减少摩擦。</td></tr><tr><td class="rk">没有 GPU / RDMA 硬件</td><td>RDMA 用 SoftRoCE 解决（零成本）；GPU 用云服务器按小时租（本计划预算 500-800 元）；大规模实验用仿真器（ASTRA-sim / NS-3）。三条路都不需要你拥有一台机器。</td></tr><tr><td class="rk">3 月还没准备好</td><td>立刻启动 B 计划：① 先投日常实习（门槛低于暑期实习）② 延后到 4-5 月批次 ③ 转投国产 GPU 厂（招聘周期更长、对通信背景更友好）。</td></tr><tr><td class="rk">方向中途动摇</td><td>AI Infra 最大的风险是贪多。记住这条纪律：网络和集合通信没打到能扛 45 分钟深挖之前，不碰 CUDA kernel、不碰调度、不碰光器件。</td></tr></tbody></table>
+
+<h2>资源清单</h2>
+<table class="rs"><tbody><tr><td class='rn'>主线教材</td><td>《CSAPP》（必做 7 个 lab）· 《UNIX Network Programming 卷1》· 《C 和指针》</td></tr><tr><td class='rn'>课程</td><td>CMU 15-213（CSAPP 官方课）· Stanford CS144（计算机网络）· MIT 6.S081（OS，选读）</td></tr><tr><td class='rn'>必读论文</td><td>DCQCN(SIGCOMM&#x27;15) · TIMELY(SIGCOMM&#x27;15) · RDMA over Commodity Ethernet at Scale(SIGCOMM&#x27;16) · HPCC(SIGCOMM&#x27;19) · Swift(SIGCOMM&#x27;20) · EQDS(SIGCOMM&#x27;22) · UEC 规范 · Google OCS/Apollo</td></tr><tr><td class='rn'>工具链</td><td>rdma-core + SoftRoCE(rxe) · perftest · nccl-tests · Nsight Systems/Compute · perf / bpftrace · Wireshark · ASTRA-sim / NS-3 / ht-sim · iperf3 / tc netem</td></tr><tr><td class='rn'>硬件替代方案</td><td>无 RDMA 网卡 → SoftRoCE（零成本）；无 GPU → 云服务器按小时租（计划预算 500-800 元）；无万卡集群 → 仿真器</td></tr></tbody></table>
+
+<div class="foot">
+<p>本计划基于 25 份真实 JD 的技术频次统计制定：C/C++（校招 91%）、RDMA（76%）、NCCL（73%）、集合通信（64%）、拥塞控制（52%）为最高权重项，故 P0–P2 依次覆盖系统编程、网络与 RDMA、集合通信与项目。</p>
+<p>时间校准依据：两年制硕士 2028 年 6 月毕业，大厂 2028 届暑期实习招聘于 2027 年 3 月启动、4 月达峰，故简历须在 2027 年 2 月底前可投。</p>
+<p>日期以 2026.09.21 为周一基准逐周推算；国庆（10.1–10.7）与春节（约 2027.02.06，请以校历为准）已做弹性处理。</p>
+</div>
+
+</div>
+<script>
+var KEY='ai_net_plan_v1';
+var st={};
+try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){st={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function upd(){
+ var all=document.querySelectorAll('.ck'),dn=0;
+ all.forEach(function(c){ if(st[c.dataset.k]){c.checked=true;dn++} });
+ var tot=all.length;
+ var pc=tot?Math.round(dn/tot*100):0;
+ document.getElementById('fi').style.width=pc+'%';
+ document.getElementById('pn').textContent=dn;
+ document.getElementById('pp').textContent=pc+'%';
+ var tw={},tp={},dw={},dp={};
+ all.forEach(function(c){
+   var wn=c.dataset.k.split('-')[0].substring(1);
+   var ph=c.closest('.ph'); var pi=ph?ph.id:'';
+   tw[wn]=(tw[wn]||0)+1; if(pi) tp[pi]=(tp[pi]||0)+1;
+   if(st[c.dataset.k]){ dw[wn]=(dw[wn]||0)+1; if(pi) dp[pi]=(dp[pi]||0)+1; }
+ });
+ Object.keys(tw).forEach(function(n){
+   var el=document.querySelector('.wk-p[data-w="'+n+'"]');
+   if(el) el.textContent=Math.round((dw[n]||0)/tw[n]*100)+'%';
+ });
+ Object.keys(tp).forEach(function(p){
+   var el=document.querySelector('.ph-p[data-p="'+p+'"]');
+   if(el) el.textContent=Math.round((dp[p]||0)/tp[p]*100)+'%';
+ });
+}
+document.addEventListener('change',function(e){
+ if(e.target.classList.contains('ck')){ st[e.target.dataset.k]=e.target.checked; save(); upd(); }
+});
+var rs=document.createElement('button');
+rs.textContent='清空全部进度';
+rs.style.cssText='position:fixed;right:14px;bottom:14px;z-index:99;background:#1c2230;color:#9aa7b8;border:1px solid #2a3242;border-radius:8px;padding:7px 13px;font-size:12px;cursor:pointer';
+rs.onclick=function(){ if(confirm('确定清空所有勾选记录？')){ st={}; save(); document.querySelectorAll('.ck').forEach(function(c){c.checked=false}); upd(); } };
+document.body.appendChild(rs);
+upd();
+</script>
+</body></html>
