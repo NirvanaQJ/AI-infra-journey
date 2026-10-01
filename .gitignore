@@ -4,5 +4,4 @@
 *.so
 build/
 .vscode/
-*.log
 __pycache__/
