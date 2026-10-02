@@ -6,9 +6,9 @@
 
 | 内容 | 入口 |
 | --- | --- |
-| 每日记录 | [journal/](journal/)；最近记录：[9 月 29 日](journal/2026-9-29.md)、[9 月 30 日](journal/2026-09-30.md) |
-| 主题笔记 | [docs/](docs/)，目前有 [CSAPP 第 2 章](docs/csapp/ch02.md)、[CSAPP 3.6 控制流](docs/csapp/ch03-control.md)、[CSAPP 3.7 过程调用](docs/csapp/ch03-procedures.md) 与 [环境配置](docs/setup/environment.md) |
-| C 小练习 | [exercises/](exercises/)：字节布局、指针、结构体对齐 |
+| 每日记录 | [journal/](journal/)；最近记录：[9 月 30 日](journal/2026-09-30.md)、[10 月 1 日](journal/2026-10-01.md) |
+| 主题笔记 | [docs/](docs/)，目前有 [CSAPP 第 2 章](docs/csapp/ch02.md)、[控制流](docs/csapp/ch03-control.md)、[过程调用](docs/csapp/ch03-procedures.md)、[数组与越界](docs/csapp/ch03-data-and-bounds.md)及[环境配置](docs/setup/environment.md) |
+| C 小练习 | [exercises/](exercises/)：字节布局、指针、结构体对齐、数组边界 |
 | CSAPP 实验 | [Data Lab](labs/csapp/datalab/README.md) 和 [Bomb Lab](labs/csapp/bomblab/README.md) |
 | 跨周项目 | [projects/](projects/)；项目开始时建立独立目录 |
 
