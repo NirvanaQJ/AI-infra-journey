@@ -8,5 +8,6 @@
 | [pointer_drills.c](c/pointer_drills.c) | 指针练习，仍有待完成部分。 |
 | [sep25_layout_lab.c](c/sep25_layout_lab.c) | 实测结构体大小、成员偏移与缓存行位置。 |
 | [oct01_array_struct_bounds.c](c/oct01_array_struct_bounds.c) | 观察数组、结构体汇编寻址并验证下标边界检查。 |
+| [linking-oct02/](c/linking-oct02/README.md) | 对照符号表与重定位记录，手动用 `ld` 链接最小程序。 |
 
 编译产物统一放到仓库根目录的 `build/`。

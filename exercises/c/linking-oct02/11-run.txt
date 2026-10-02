@@ -1,0 +1,2 @@
+command: ./build/linking-oct02/manual
+exit_status: 4

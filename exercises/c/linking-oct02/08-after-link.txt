@@ -1,0 +1,31 @@
+
+build/linking-oct02/manual：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000401000 <_start>:
+  401000:	e8 09 00 00 00       	call   40100e <main>
+  401005:	89 c7                	mov    %eax,%edi
+  401007:	b8 3c 00 00 00       	mov    $0x3c,%eax
+  40100c:	0f 05                	syscall
+
+000000000040100e <main>:
+  40100e:	f3 0f 1e fa          	endbr64
+  401012:	55                   	push   %rbp
+  401013:	48 89 e5             	mov    %rsp,%rbp
+  401016:	8b 05 e4 1f 00 00    	mov    0x1fe4(%rip),%eax        # 403000 <value>
+  40101c:	89 c7                	mov    %eax,%edi
+  40101e:	e8 02 00 00 00       	call   401025 <bump>
+  401023:	5d                   	pop    %rbp
+  401024:	c3                   	ret
+
+0000000000401025 <bump>:
+  401025:	f3 0f 1e fa          	endbr64
+  401029:	55                   	push   %rbp
+  40102a:	48 89 e5             	mov    %rsp,%rbp
+  40102d:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  401030:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  401033:	83 c0 01             	add    $0x1,%eax
+  401036:	5d                   	pop    %rbp
+  401037:	c3                   	ret

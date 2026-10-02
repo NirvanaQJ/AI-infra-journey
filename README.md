@@ -6,9 +6,9 @@
 
 | 内容 | 入口 |
 | --- | --- |
-| 每日记录 | [journal/](journal/)；最近记录：[9 月 30 日](journal/2026-09-30.md)、[10 月 1 日](journal/2026-10-01.md) |
-| 主题笔记 | [docs/](docs/)，目前有 [CSAPP 第 2 章](docs/csapp/ch02.md)、[控制流](docs/csapp/ch03-control.md)、[过程调用](docs/csapp/ch03-procedures.md)、[数组与越界](docs/csapp/ch03-data-and-bounds.md)及[环境配置](docs/setup/environment.md) |
-| C 小练习 | [exercises/](exercises/)：字节布局、指针、结构体对齐、数组边界 |
+| 每日记录 | [journal/](journal/)；最近记录：[9 月 30 日](journal/2026-09-30.md)、[10 月 1 日](journal/2026-10-01.md)、[10 月 2 日](journal/2026-10-02.md) |
+| 主题笔记 | [docs/](docs/)，目前有 [CSAPP 第 2 章](docs/csapp/ch02.md)、[控制流](docs/csapp/ch03-control.md)、[过程调用](docs/csapp/ch03-procedures.md)、[数组与越界](docs/csapp/ch03-data-and-bounds.md)、[链接](docs/csapp/ch07-linking.md)及[环境配置](docs/setup/environment.md) |
+| C 小练习 | [exercises/](exercises/)：字节布局、指针、结构体对齐、数组边界、[链接观察](exercises/c/linking-oct02/README.md) |
 | CSAPP 实验 | [Data Lab](labs/csapp/datalab/README.md) 和 [Bomb Lab](labs/csapp/bomblab/README.md) |
 | 跨周项目 | [projects/](projects/)；项目开始时建立独立目录 |
 
@@ -28,6 +28,7 @@
 - [字节布局](exercises/c/byte_layout.c)：观察 C 对象与地址。
 - [指针练习](exercises/c/pointer_drills.c)：含待完成的练习，不能当作已完成答案。
 - [结构体布局实验](exercises/c/sep25_layout_lab.c)：用 `sizeof`、`_Alignof`、`offsetof` 验证大小与对齐。
+- [链接观察](exercises/c/linking-oct02/README.md)：保存 `.o`、`readelf`、`objdump` 与手动 `ld` 链接过程。
 - [Data Lab](labs/csapp/datalab/README.md)：实验包与测试说明。
 - [Bomb Lab](labs/csapp/bomblab/README.md)：程序与调试入口。
 
